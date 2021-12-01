@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 09:55:34 by lvarela           #+#    #+#             */
-/*   Updated: 2021/12/01 18:24:36 by lvarela          ###   ########.fr       */
+/*   Updated: 2021/12/01 19:45:18 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ typedef struct	s_data
 	int	**z_matrix;
 	int	zoom;
 	int	color;
+	int	shift_x;
+	int	shift_y;
 
 	void	*mlx_ptr;
 	void	*win_ptr;

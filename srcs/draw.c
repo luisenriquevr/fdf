@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 19:50:49 by lvarela           #+#    #+#             */
-/*   Updated: 2021/12/01 19:33:13 by lvarela          ###   ########.fr       */
+/*   Updated: 2021/12/02 00:27:56 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,10 +59,11 @@ void	bresenham(float x, float y, float x1, float y1, t_data *data)
 	isometric(&x, &y, z);
 	isometric(&x1, &y1, z1);
 
-	x += 150;
-	y += 150;
-	x1 += 150;
-	y1 += 150;
+	//-----------shift-------------
+	x += data->shift_x;
+	y += data->shift_y;
+	x1 += data->shift_x;
+	y1 += data->shift_y;
 	
 	x_step = x1 - x;
 	y_step = y1 - y;
