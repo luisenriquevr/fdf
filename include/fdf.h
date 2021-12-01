@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 09:55:34 by lvarela           #+#    #+#             */
-/*   Updated: 2021/12/01 17:58:39 by lvarela          ###   ########.fr       */
+/*   Updated: 2021/12/01 18:24:36 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ typedef struct	s_data
 	int	width;
 	int	height;
 	int	**z_matrix;
+	int	zoom;
+	int	color;
 
 	void	*mlx_ptr;
 	void	*win_ptr;
@@ -30,5 +32,6 @@ typedef struct	s_data
 int	main(int argc, char **argv);
 void	map_parser(char *file_name, t_data *data);
 void	bresenham(float x, float y, float x1, float y1, t_data *data);
+void	draw(t_data *data);
 
 #endif
