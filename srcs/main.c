@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 09:55:32 by lvarela           #+#    #+#             */
-/*   Updated: 2021/12/02 00:29:58 by lvarela          ###   ########.fr       */
+/*   Updated: 2021/12/04 18:27:55 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int	main(int argc, char **argv)
 	t_data	*data;
 
 	data = (t_data *)malloc(sizeof(t_data));
+	errors_checker(argc, argv);
 	map_parser(argv[1], data);
 	data->mlx_ptr = mlx_init();
 	data->win_ptr = mlx_new_window(data->mlx_ptr, 1000, 1000, "FDF");

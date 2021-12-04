@@ -6,12 +6,11 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 19:50:49 by lvarela           #+#    #+#             */
-/*   Updated: 2021/12/02 00:27:56 by lvarela          ###   ########.fr       */
+/*   Updated: 2021/12/04 17:54:10 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fdf.h"
-#include <math.h>
 
 float	max1(float a, float b)
 {
