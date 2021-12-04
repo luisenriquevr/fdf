@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 09:55:34 by lvarela           #+#    #+#             */
-/*   Updated: 2021/12/04 18:45:31 by lvarela          ###   ########.fr       */
+/*   Updated: 2021/12/04 18:50:22 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ typedef struct	s_data
 }			t_data;
 
 void	map_parser(char *file_name, t_data *data);
-void	bresenham(float x, float y, float x1, float y1, t_data *data);
+void	bressenham(float x, float y, float x1, float y1, t_data *data);
 void	draw(t_data *data);
 void	checker(int argc, char **argv);
 

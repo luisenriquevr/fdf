@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 19:50:49 by lvarela           #+#    #+#             */
-/*   Updated: 2021/12/04 17:54:10 by lvarela          ###   ########.fr       */
+/*   Updated: 2021/12/04 18:50:23 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	isometric(float *x, float *y, int z)
 	*y = (*x + *y) * sin(0.8) - z;
 }
 
-void	bresenham(float x, float y, float x1, float y1, t_data *data)
+void	bressenham(float x, float y, float x1, float y1, t_data *data)
 {
 	float	x_step;
 	float	y_step;
@@ -89,9 +89,9 @@ void	draw(t_data *data)
 		while (x < data->width)
 		{
 			if (x < data->width - 1)
-				bresenham(x, y, x + 1, y, data);
+				bressenham(x, y, x + 1, y, data);
 			if (y < data->height - 1)
-				bresenham(x, y, x, y + 1, data);
+				bressenham(x, y, x, y + 1, data);
 			x++;
 		}
 		y++;
