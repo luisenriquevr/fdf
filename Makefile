@@ -6,9 +6,9 @@ FLAGS	=	-Wall  -Wextra -g -framework OpenGL -framework AppKit
 
 SRCS	=	libs/get_next_line/get_next_line.c \
 			libs/get_next_line/get_next_line_utils.c \
-			srcs/main.c \
+			srcs/fdf.c \
 			srcs/map_parser.c \
-			srcs/draw.c \
+			srcs/camera.c \
 
 
 OBJS	=	${SRCS:.c=.o}

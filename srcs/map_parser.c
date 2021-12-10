@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing.c                                          :+:      :+:    :+:   */
+/*   map_parser.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 11:37:56 by lvarela           #+#    #+#             */
-/*   Updated: 2021/12/01 11:05:25 by lvarela          ###   ########.fr       */
+/*   Updated: 2021/12/09 17:06:28 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,19 +85,19 @@ void	map_parser(char *file_name, t_data *data)
 	char *line;
 	int	i;
 
-	data->height = get_height(file_name);
-	data->width = get_width(file_name);
-	data->z_matrix = (int **)malloc(sizeof(int *) * (data->height + 1));
+	data->win.height = get_height(file_name);
+	data->win.width = get_width(file_name);
+	data->map = (int **)malloc(sizeof(int *) * (data->win.height + 1));
 	i = 0;
-	while (i <= data->height)
-		data->z_matrix[i++] = (int *)malloc(sizeof(int) * (data->width + 1));
+	while (i <= data->win.height)
+		data->map[i++] = (int *)malloc(sizeof(int) * (data->win.width + 1));
 	fd = open(file_name, O_RDONLY, 0);
 	i = 0;
 	while (get_next_line(fd, &line))
 	{
-		fill_matrix(data->z_matrix[i++], line);
+		fill_matrix(data->map[i++], line);
 		free(line);
 	}
 	close(fd);
-	data->z_matrix[i] = NULL;
+	data->map[i] = NULL;
 }
