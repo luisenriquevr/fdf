@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   init_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/10 13:42:46 by lvarela           #+#    #+#             */
-/*   Updated: 2021/12/16 10:36:05 by lvarela          ###   ########.fr       */
+/*   Created: 2021/12/16 10:51:39 by lvarela           #+#    #+#             */
+/*   Updated: 2021/12/16 10:55:57 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,14 @@ static void	data_init_aux(t_data *init)
 	init->cam.angle = 0.0;
 	init->cam.isometric = 0;
 	init->cam.oblique = 0;
-	init->cam.pangle = 0;
+	init->cam.plane = 0;
 	init->cam.rotate[0] = 0;
 	init->cam.rotate[1] = 0;
 	init->cam.rotate[2] = 0;
 	init->range.max = 0;
 	init->range.min = 0;
 	init->range.range = 0;
-	init->zoom = 0;
-	init->mov = 0;
-	
+	init->zoom = 1;
 }
 
 void	data_init(t_data *init)
@@ -56,12 +54,12 @@ void	data_init(t_data *init)
 	init->read.buf = NULL;
 }
 
-static void	window_resize(t_data *data)
+static void	window_resize(t_data *c)
 {
-	if (data->res.x <= data->win.width)
-		data->win.width = data->res.x;
-	if (data->res.y <= data->win.height)
-		data->win.height = data->res.y;
+	if (c->res.x <= c->win.width)
+		c->win.width = c->res.x;
+	if (c->res.y <= c->win.height)
+		c->win.height = c->res.y;
 }
 
 void	mlx_func_init(t_data *data)

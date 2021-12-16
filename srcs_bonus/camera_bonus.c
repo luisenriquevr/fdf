@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   camera.c                                           :+:      :+:    :+:   */
+/*   camera_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/10 12:09:37 by lvarela           #+#    #+#             */
-/*   Updated: 2021/12/16 10:31:56 by lvarela          ###   ########.fr       */
+/*   Created: 2021/12/16 13:23:56 by lvarela           #+#    #+#             */
+/*   Updated: 2021/12/16 14:24:32 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	perform_position(t_point *p0, t_point *p1, t_data *data)
 	p1->y += data->cam.y;
 }
 
-int	zoom(int size)
+static int	zoom(int size)
 {
 	if (size <= 20)
 		return (ZOOM);
@@ -42,7 +42,7 @@ int	zoom(int size)
 		return (2);
 }
 
-void	range(t_data *data)
+static void	range(t_data *data)
 {
 	int		x;
 	int		y;

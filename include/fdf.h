@@ -6,17 +6,24 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 09:55:34 by lvarela           #+#    #+#             */
-/*   Updated: 2021/12/10 13:28:36 by lvarela          ###   ########.fr       */
+/*   Updated: 2021/12/16 14:31:32 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FDF_H
 # define FDF_H
+# include "../libs/minilibx-Darwin/mlx.h"
+# include "keycode_mac.h"
+# include "libft.h"
+# include <unistd.h>
+# include <stdlib.h>
+# include <fcntl.h>
+# include <sys/types.h>
+# include <sys/uio.h>
+# include <stdio.h>
+# include <string.h>
+# include <math.h>
 
-#include "../libs/libft/libft.h"
-#include "../libs/minilibx_macos/mlx.h"
-#include "../libs/get_next_line/get_next_line.h"
-#include <math.h>
 # define WID_CAM			1000
 # define HEI_CAM			800
 # define ZOOM				8
@@ -38,7 +45,6 @@
 # define ROT_X				1
 # define ROT_Y				2
 # define ROT_Z				3
-
 
 typedef struct s_render
 {
@@ -124,8 +130,23 @@ typedef struct s_data
 	t_read		read;
 }				t_data;
 
-void	map_parser(char *file_name, t_data *data);
+void	data_init(t_data *init);
 void	camera_init(t_data *data);
+void	map_parser(char *filename, t_data *data);
+void	mlx_func_init(t_data *data);
+int		key_press(int key, t_data *data);
+int		exitt(t_data *data);
+int		image_creator(t_data *data);
+void	plotline(t_point p0, int x1, int y1, t_data *data);
+void	clean_exit(t_data *data, char *info, int error);
+void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
+void	perform_zoom(t_point *p0, t_point *p1, int z[2], t_data *data);
+void	perform_position(t_point *p0, t_point *p1, t_data *data);
+void	ft_split(char const *s1, char c, t_data *d);
 
+int		zoom_bonus(int button, int x, int y, t_data *data);
+void	perspective(t_data *data, int key);
+void	camera_mov(t_data *data, int key);
+void	rotate(int *x, int *y, int *z, t_data *data);
 
 #endif

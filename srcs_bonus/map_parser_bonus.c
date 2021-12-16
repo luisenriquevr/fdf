@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_parser.c                                       :+:      :+:    :+:   */
+/*   map_parser_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/30 11:37:56 by lvarela           #+#    #+#             */
-/*   Updated: 2021/12/16 10:47:02 by lvarela          ###   ########.fr       */
+/*   Created: 2021/12/16 11:02:08 by lvarela           #+#    #+#             */
+/*   Updated: 2021/12/16 12:43:51 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,12 +92,9 @@ void	map_parser(char *filename, t_data *map)
 		clean_exit(map, "Fdf file could not be opened\n", 1);
 	map->map = (int **)malloc(sizeof(int *) * map->nrows);
 	while (i < map->nrows)
-	{
-		map->map[i] = (int *)malloc(sizeof(int) * map->ncols);
-		i++;
-	}
+		map->map[i++] = (int *)malloc(sizeof(int) * map->ncols);
 	i = 0;
-	while (get_next_line(fd, &map->line, &map->read.b, &map->read.l) > 0)
+	while (get_next_line(fd, &map->line, &map->read.b, &map->read.l))
 	{
 		fill(map->line, map->map[i++], map);
 		free(map->line);
