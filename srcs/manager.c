@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 17:11:31 by lvarela           #+#    #+#             */
-/*   Updated: 2021/12/16 20:33:29 by lvarela          ###   ########.fr       */
+/*   Updated: 2021/12/16 20:37:23 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,5 @@ void	clean_exit(t_data *data, char *str, int error)
 		if (data->read.b)
 			free(data->read.b);
 	}
-	system("leaks fdf");
 	exit(1);
 }
